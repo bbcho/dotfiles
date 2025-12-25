@@ -1,0 +1,271 @@
+{
+  "Cell Marker": {
+    "prefix": "rcell",
+    "body": [
+      "# %%",
+      "$0"
+    ],
+    "description": "Jupyter-style cell marker"
+  },
+  "Cell with Title": {
+    "prefix": "rcellt",
+    "body": [
+      "# %% ${1:Cell Title}",
+      "$0"
+    ],
+    "description": "Cell marker with title"
+  },
+  "Tidyverse Libraries": {
+    "prefix": "rtidy",
+    "body": [
+      "library(tidyverse)",
+      "library(lubridate)",
+      "library(scales)",
+      "",
+      "$0"
+    ],
+    "description": "Load tidyverse libraries"
+  },
+  "Full R Setup": {
+    "prefix": "rsetup",
+    "body": [
+      "library(tidyverse)",
+      "library(lubridate)",
+      "library(scales)",
+      "library(janitor)",
+      "library(here)",
+      "",
+      "theme_set(theme_minimal())",
+      "",
+      "$0"
+    ],
+    "description": "Full R setup with common libraries"
+  },
+  "Read CSV": {
+    "prefix": "rread",
+    "body": [
+      "${1:df} <- read_csv(\"${2:data.csv}\")",
+      "glimpse(${1:df})",
+      "$0"
+    ],
+    "description": "Read CSV with glimpse"
+  },
+  "Read Excel": {
+    "prefix": "rreadxl",
+    "body": [
+      "library(readxl)",
+      "${1:df} <- read_excel(\"${2:data.xlsx}\", sheet = ${3:1})",
+      "glimpse(${1:df})",
+      "$0"
+    ],
+    "description": "Read Excel file"
+  },
+  "Pipe Chain": {
+    "prefix": "rpipe",
+    "body": [
+      "${1:df} |>",
+      "  ${2:filter(${3:condition})} |>",
+      "  ${4:mutate(${5:new_col} = ${6:expression})} |>",
+      "  ${7:select(${8:columns})}",
+      "$0"
+    ],
+    "description": "Tidyverse pipe chain"
+  },
+  "ggplot Base": {
+    "prefix": "rggplot",
+    "body": [
+      "ggplot(${1:df}, aes(x = ${2:x_var}, y = ${3:y_var})) +",
+      "  geom_${4|point,line,bar,col,histogram,boxplot|}() +",
+      "  labs(",
+      "    title = \"${5:Title}\",",
+      "    x = \"${6:X Label}\",",
+      "    y = \"${7:Y Label}\"",
+      "  ) +",
+      "  theme_minimal()",
+      "$0"
+    ],
+    "description": "Basic ggplot template"
+  },
+  "ggplot Scatter": {
+    "prefix": "rggscatter",
+    "body": [
+      "ggplot(${1:df}, aes(x = ${2:x_var}, y = ${3:y_var}, color = ${4:group_var})) +",
+      "  geom_point(alpha = 0.7) +",
+      "  geom_smooth(method = \"lm\", se = FALSE) +",
+      "  labs(",
+      "    title = \"${5:Title}\",",
+      "    x = \"${6:X Label}\",",
+      "    y = \"${7:Y Label}\"",
+      "  ) +",
+      "  theme_minimal()",
+      "$0"
+    ],
+    "description": "ggplot scatter with regression"
+  },
+  "ggplot Faceted": {
+    "prefix": "rggfacet",
+    "body": [
+      "ggplot(${1:df}, aes(x = ${2:x_var}, y = ${3:y_var})) +",
+      "  geom_${4|point,line,bar,col|}() +",
+      "  facet_wrap(~${5:facet_var}, scales = \"${6|fixed,free,free_x,free_y|}\") +",
+      "  labs(",
+      "    title = \"${7:Title}\"",
+      "  ) +",
+      "  theme_minimal()",
+      "$0"
+    ],
+    "description": "ggplot with faceting"
+  },
+  "Save Plot": {
+    "prefix": "rggsave",
+    "body": [
+      "ggsave(",
+      "  \"${1:plot.png}\",",
+      "  width = ${2:10},",
+      "  height = ${3:6},",
+      "  dpi = ${4:300}",
+      ")",
+      "$0"
+    ],
+    "description": "Save ggplot"
+  },
+  "Group Summarize": {
+    "prefix": "rsummarize",
+    "body": [
+      "${1:df} |>",
+      "  group_by(${2:group_var}) |>",
+      "  summarize(",
+      "    n = n(),",
+      "    mean_${3:var} = mean(${3:var}, na.rm = TRUE),",
+      "    sd_${3:var} = sd(${3:var}, na.rm = TRUE)",
+      "  ) |>",
+      "  ungroup()",
+      "$0"
+    ],
+    "description": "Group by and summarize"
+  },
+  "Count": {
+    "prefix": "rcount",
+    "body": [
+      "${1:df} |>",
+      "  count(${2:var}, sort = TRUE)",
+      "$0"
+    ],
+    "description": "Count values"
+  },
+  "Function": {
+    "prefix": "rfunc",
+    "body": [
+      "${1:function_name} <- function(${2:params}) {",
+      "  #' ${3:Description}",
+      "  #'",
+      "  #' @param ${4:param} ${5:Description}",
+      "  #' @return ${6:Description}",
+      "  ",
+      "  ${0:NULL}",
+      "}"
+    ],
+    "description": "R function with roxygen"
+  },
+  "If Else": {
+    "prefix": "rif",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${2:true_action}",
+      "} else {",
+      "  ${3:false_action}",
+      "}",
+      "$0"
+    ],
+    "description": "If-else statement"
+  },
+  "Case When": {
+    "prefix": "rcase",
+    "body": [
+      "case_when(",
+      "  ${1:condition1} ~ ${2:value1},",
+      "  ${3:condition2} ~ ${4:value2},",
+      "  TRUE ~ ${5:default}",
+      ")",
+      "$0"
+    ],
+    "description": "case_when statement"
+  },
+  "Mutate Case When": {
+    "prefix": "rmutcase",
+    "body": [
+      "${1:df} |>",
+      "  mutate(",
+      "    ${2:new_col} = case_when(",
+      "      ${3:condition1} ~ ${4:value1},",
+      "      ${5:condition2} ~ ${6:value2},",
+      "      TRUE ~ ${7:default}",
+      "    )",
+      "  )",
+      "$0"
+    ],
+    "description": "Mutate with case_when"
+  },
+  "Left Join": {
+    "prefix": "rjoin",
+    "body": [
+      "${1:df1} |>",
+      "  left_join(${2:df2}, by = \"${3:key}\")",
+      "$0"
+    ],
+    "description": "Left join two dataframes"
+  },
+  "Pivot Longer": {
+    "prefix": "rpivotlong",
+    "body": [
+      "${1:df} |>",
+      "  pivot_longer(",
+      "    cols = ${2:columns},",
+      "    names_to = \"${3:name}\",",
+      "    values_to = \"${4:value}\"",
+      "  )",
+      "$0"
+    ],
+    "description": "Pivot longer"
+  },
+  "Pivot Wider": {
+    "prefix": "rpivotwide",
+    "body": [
+      "${1:df} |>",
+      "  pivot_wider(",
+      "    names_from = ${2:name_col},",
+      "    values_from = ${3:value_col}",
+      "  )",
+      "$0"
+    ],
+    "description": "Pivot wider"
+  },
+  "For Loop": {
+    "prefix": "rfor",
+    "body": [
+      "for (${1:i} in ${2:seq_along(x)}) {",
+      "  ${0:body}",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "Map Function": {
+    "prefix": "rmap",
+    "body": [
+      "map(${1:list}, ~{",
+      "  ${0:.x}",
+      "})"
+    ],
+    "description": "purrr map function"
+  },
+  "Data Glimpse": {
+    "prefix": "rglimpse",
+    "body": [
+      "glimpse(${1:df})",
+      "summary(${1:df})",
+      "head(${1:df})",
+      "$0"
+    ],
+    "description": "Quick data overview"
+  }
+}

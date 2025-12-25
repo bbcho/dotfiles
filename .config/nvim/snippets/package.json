@@ -1,0 +1,19 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["quarto", "markdown"],
+        "path": "./quarto.json"
+      },
+      {
+        "language": ["python"],
+        "path": "./python.json"
+      },
+      {
+        "language": ["r"],
+        "path": "./r.json"
+      }
+    ]
+  }
+}

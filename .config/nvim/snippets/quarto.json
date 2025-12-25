@@ -1,0 +1,433 @@
+{
+  "Quarto Revealjs Presentation": {
+    "prefix": "qreveal",
+    "body": [
+      "---",
+      "title: \"${1:Presentation Title}\"",
+      "description: |",
+      "  ${2:Description}",
+      "author: \"${3:Ben Cho}\"",
+      "format:",
+      "  revealjs:",
+      "    smaller: true",
+      "    footer: \"${4:Quantim Intelligence}\"",
+      "execute:",
+      "  cache: false",
+      "  echo: false",
+      "  error: false",
+      "  warning: false",
+      "---",
+      "",
+      "## ${5:First Slide}",
+      "",
+      "$0"
+    ],
+    "description": "Quarto Revealjs presentation template"
+  },
+  "Quarto HTML Document": {
+    "prefix": "qhtml",
+    "body": [
+      "---",
+      "title: \"${1:Document Title}\"",
+      "author: \"${2:Ben Cho}\"",
+      "format:",
+      "  html:",
+      "    toc: true",
+      "    number-sections: true",
+      "    theme: united",
+      "    highlight-style: pygments",
+      "execute:",
+      "  echo: true",
+      "  warning: false",
+      "---",
+      "",
+      "## ${3:Introduction}",
+      "",
+      "$0"
+    ],
+    "description": "Quarto HTML document template"
+  },
+  "Quarto PDF Document": {
+    "prefix": "qpdf",
+    "body": [
+      "---",
+      "title: \"${1:Document Title}\"",
+      "author: \"${2:Ben Cho}\"",
+      "format:",
+      "  pdf:",
+      "    toc: true",
+      "    number-sections: true",
+      "    colorlinks: true",
+      "execute:",
+      "  echo: false",
+      "  warning: false",
+      "---",
+      "",
+      "## ${3:Introduction}",
+      "",
+      "$0"
+    ],
+    "description": "Quarto PDF document template"
+  },
+  "Quarto PowerPoint": {
+    "prefix": "qpptx",
+    "body": [
+      "---",
+      "title: \"${1:Presentation Title}\"",
+      "author: \"${2:Ben Cho}\"",
+      "format:",
+      "  pptx:",
+      "    reference-doc: ${3:template.pptx}",
+      "execute:",
+      "  echo: false",
+      "  warning: false",
+      "---",
+      "",
+      "## ${4:First Slide}",
+      "",
+      "$0"
+    ],
+    "description": "Quarto PowerPoint presentation template"
+  },
+  "Python Code Chunk": {
+    "prefix": "qpython",
+    "body": [
+      "```{python}",
+      "#| label: ${1:chunk-name}",
+      "#| echo: ${2|true,false|}",
+      "",
+      "$0",
+      "```"
+    ],
+    "description": "Quarto Python code chunk"
+  },
+  "R Code Chunk": {
+    "prefix": "qr",
+    "body": [
+      "```{r}",
+      "#| label: ${1:chunk-name}",
+      "#| echo: ${2|true,false|}",
+      "",
+      "$0",
+      "```"
+    ],
+    "description": "Quarto R code chunk"
+  },
+  "Code Chunk": {
+    "prefix": "qchunk",
+    "body": [
+      "```{${1|python,r,julia,bash|}}",
+      "#| label: ${2:chunk-name}",
+      "",
+      "$0",
+      "```"
+    ],
+    "description": "Generic Quarto code chunk"
+  },
+  "Chunk Options": {
+    "prefix": "qopts",
+    "body": [
+      "#| label: ${1:chunk-name}",
+      "#| echo: ${2|true,false|}",
+      "#| eval: ${3|true,false|}",
+      "#| output: ${4|true,false|}",
+      "#| warning: false",
+      "#| fig-cap: \"${5:Figure caption}\"",
+      "$0"
+    ],
+    "description": "Common Quarto chunk options"
+  },
+  "Callout Note": {
+    "prefix": "qnote",
+    "body": [
+      "::: {.callout-note}",
+      "## ${1:Note Title}",
+      "",
+      "${2:Note content}",
+      ":::",
+      "$0"
+    ],
+    "description": "Quarto callout note"
+  },
+  "Callout Warning": {
+    "prefix": "qwarn",
+    "body": [
+      "::: {.callout-warning}",
+      "## ${1:Warning Title}",
+      "",
+      "${2:Warning content}",
+      ":::",
+      "$0"
+    ],
+    "description": "Quarto callout warning"
+  },
+  "Columns Layout": {
+    "prefix": "qcols",
+    "body": [
+      ":::: {.columns}",
+      "",
+      "::: {.column width=\"50%\"}",
+      "${1:Left column content}",
+      ":::",
+      "",
+      "::: {.column width=\"50%\"}",
+      "${2:Right column content}",
+      ":::",
+      "",
+      "::::",
+      "$0"
+    ],
+    "description": "Quarto two-column layout"
+  },
+  "Tabset": {
+    "prefix": "qtabs",
+    "body": [
+      "::: {.panel-tabset}",
+      "",
+      "## ${1:Tab 1}",
+      "",
+      "${2:Content 1}",
+      "",
+      "## ${3:Tab 2}",
+      "",
+      "${4:Content 2}",
+      "",
+      ":::",
+      "$0"
+    ],
+    "description": "Quarto tabset panel"
+  },
+
+  "Figure Reference": {
+    "prefix": "figref",
+    "body": ["@fig-${1:label}"],
+    "description": "Reference a figure"
+  },
+  "Table Reference": {
+    "prefix": "tblref",
+    "body": ["@tbl-${1:label}"],
+    "description": "Reference a table"
+  },
+  "Equation Reference": {
+    "prefix": "eqref",
+    "body": ["@eq-${1:label}"],
+    "description": "Reference an equation"
+  },
+  "Section Reference": {
+    "prefix": "secref",
+    "body": ["@sec-${1:label}"],
+    "description": "Reference a section"
+  },
+
+  "Figure with Caption": {
+    "prefix": "fig",
+    "body": ["![${1:caption}](${2:image.png}){#fig-${3:label}}"],
+    "description": "Figure with caption and label"
+  },
+  "Two Figures Side by Side": {
+    "prefix": "fig2",
+    "body": [
+      ":::: {#fig-${1:label} layout=\"[1,1]\"}",
+      "",
+      "![${2:subcap1}](${3:figure1}){#fig-$2}",
+      "",
+      "![${4:subcap2}](${5:figure2}){#fig-$4}",
+      "",
+      "${6:Main caption}",
+      "::::"
+    ],
+    "description": "Two figures side by side"
+  },
+  "Three Figures Layout": {
+    "prefix": "fig3",
+    "body": [
+      ":::: {#fig-${1:label} layout=\"[[1, 1], [1]]\"}",
+      "",
+      "![${2:subcap1}](${3:figure1}){#fig-$2}",
+      "",
+      "![${4:subcap2}](${5:figure2}){#fig-$4}",
+      "",
+      "![${6:subcap3}](${7:figure3}){#fig-$6}",
+      "",
+      "${8:Main caption}",
+      "::::"
+    ],
+    "description": "Three figures in layout"
+  },
+
+  "Python Figure Chunk": {
+    "prefix": "pyfig",
+    "body": [
+      "```{python}",
+      "#| label: fig-${1:label}",
+      "#| fig-cap: \"${2:Caption}\"",
+      "",
+      "import matplotlib.pyplot as plt",
+      "",
+      "$0",
+      "plt.show()",
+      "```"
+    ],
+    "description": "Python figure chunk with label"
+  },
+  "Python Two Figures": {
+    "prefix": "pyfig2",
+    "body": [
+      "```{python}",
+      "#| label: fig-${1:label}",
+      "#| fig-cap: \"${2:Main caption}\"",
+      "#| fig-subcap:",
+      "#|   - \"${3:Subcaption 1}\"",
+      "#|   - \"${4:Subcaption 2}\"",
+      "#| layout-ncol: 2",
+      "",
+      "import matplotlib.pyplot as plt",
+      "",
+      "# First figure",
+      "$5",
+      "plt.show()",
+      "",
+      "# Second figure",
+      "$6",
+      "plt.show()",
+      "```"
+    ],
+    "description": "Python chunk with two figures"
+  },
+
+  "Equation with Label": {
+    "prefix": "eq",
+    "body": ["$$", "${1:equation}", "$$ {#eq-${2:label}}"],
+    "description": "Equation with label"
+  },
+  "Aligned Equations": {
+    "prefix": "eqalign",
+    "body": [
+      "$$",
+      "\\begin{align}",
+      "${1:equation}",
+      "\\end{align}",
+      "$$"
+    ],
+    "description": "Aligned equations"
+  },
+
+  "Revealjs Pause": {
+    "prefix": "pause",
+    "body": [". . ."],
+    "description": "Reveal.js pause"
+  },
+  "Revealjs Fragment": {
+    "prefix": "frag",
+    "body": ["::: {.fragment}", "$0", ":::"],
+    "description": "Reveal.js fragment"
+  },
+  "Revealjs Incremental List": {
+    "prefix": "inc",
+    "body": ["::: {.incremental}", "- ${1:item}", ":::", "$0"],
+    "description": "Incremental list"
+  },
+  "Revealjs Speaker Notes": {
+    "prefix": "notes",
+    "body": ["::: {.notes}", "$0", ":::"],
+    "description": "Speaker notes"
+  },
+  "Revealjs Background Image": {
+    "prefix": "bgimg",
+    "body": ["{background-image=\"${1:image.png}\" background-size=\"contain\"}"],
+    "description": "Slide background image"
+  },
+  "Revealjs Background Color": {
+    "prefix": "bgcol",
+    "body": ["{background-color=\"${1:#000000}\"}"],
+    "description": "Slide background color"
+  },
+  "Revealjs Auto-Animate": {
+    "prefix": "anim",
+    "body": ["{auto-animate=\"true\"}"],
+    "description": "Auto-animate slide"
+  },
+  "Revealjs Absolute Position": {
+    "prefix": "absolute",
+    "body": ["{.absolute top=${1:0} left=${2:0} width=\"${3:400}\" height=\"${4:300}\"}"],
+    "description": "Absolute positioning"
+  },
+
+  "Div Block": {
+    "prefix": "div",
+    "body": ["::: {${1:.class}}", "$0", ":::"],
+    "description": "Generic div block"
+  },
+  "Layout Block": {
+    "prefix": "lay",
+    "body": ["::: {layout=\"[${1:1,1}]\"}", "$0", ":::"],
+    "description": "Layout block"
+  },
+  "Aside": {
+    "prefix": "aside",
+    "body": ["::: {.aside}", "$0", ":::"],
+    "description": "Aside block"
+  },
+  "Alert Text": {
+    "prefix": "alert",
+    "body": ["[${1:text}]{.alert}"],
+    "description": "Alert/highlighted text"
+  },
+
+  "Iframe Embed": {
+    "prefix": "iframe",
+    "body": [
+      "::: {#fig-${1:label}}",
+      "",
+      "${2:paste embed code}",
+      "",
+      "${3:Caption}",
+      ":::"
+    ],
+    "description": "Iframe embed with caption"
+  },
+
+  "Bibliography": {
+    "prefix": "bib",
+    "body": ["bibliography: ${1:references.bib}"],
+    "description": "Bibliography YAML"
+  },
+
+  "Start Document (Full)": {
+    "prefix": "start",
+    "body": [
+      "---",
+      "title: \"${1:Quarto Document}\"",
+      "description: |",
+      "  ${2:Personal Notes}",
+      "author: \"${3:Ben Cho}\"",
+      "format:",
+      "  # pptx:",
+      "  #   reference-doc: template.pptx",
+      "  # html:",
+      "  #   toc: true",
+      "  #   number-sections: true",
+      "  #   theme: united",
+      "  #   highlight: pygments",
+      "  #   colorlinks: true",
+      "  #   page-layout: full",
+      "  revealjs:",
+      "    # logo: \"QI.png\"",
+      "    smaller: true",
+      "    # theme: [custom.scss]",
+      "    # css: style.css",
+      "    footer: \"${4:Quantim Intelligence}\"",
+      "execute:",
+      "  cache: false",
+      "  # cache-lazy: false",
+      "  echo: false",
+      "  error: false",
+      "  warning: false",
+      "# jupyter: python3",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Full Quarto document template with all format options"
+  }
+}

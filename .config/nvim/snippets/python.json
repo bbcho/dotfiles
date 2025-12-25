@@ -1,0 +1,423 @@
+{
+  "Cell Marker": {
+    "prefix": "pycell",
+    "body": [
+      "# %%",
+      "$0"
+    ],
+    "description": "Jupyter cell marker"
+  },
+  "Cell with Title": {
+    "prefix": "pycellt",
+    "body": [
+      "# %% ${1:Cell Title}",
+      "$0"
+    ],
+    "description": "Jupyter cell marker with title"
+  },
+  "Data Science Imports": {
+    "prefix": "pyimport",
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "import matplotlib.pyplot as plt",
+      "import seaborn as sns",
+      "",
+      "$0"
+    ],
+    "description": "Common data science imports"
+  },
+  "Full Data Science Imports": {
+    "prefix": "pyimportfull",
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "import matplotlib.pyplot as plt",
+      "import seaborn as sns",
+      "from pathlib import Path",
+      "from datetime import datetime",
+      "import warnings",
+      "warnings.filterwarnings('ignore')",
+      "",
+      "# Set display options",
+      "pd.set_option('display.max_columns', None)",
+      "pd.set_option('display.max_rows', 100)",
+      "sns.set_theme()",
+      "",
+      "$0"
+    ],
+    "description": "Full data science imports with settings"
+  },
+  "ML Imports": {
+    "prefix": "pyml",
+    "body": [
+      "from sklearn.model_selection import train_test_split, cross_val_score",
+      "from sklearn.preprocessing import StandardScaler, LabelEncoder",
+      "from sklearn.metrics import accuracy_score, classification_report, confusion_matrix",
+      "",
+      "$0"
+    ],
+    "description": "Scikit-learn imports"
+  },
+  "Read CSV": {
+    "prefix": "pyread",
+    "body": [
+      "df = pd.read_csv('${1:data.csv}')",
+      "df.head()",
+      "$0"
+    ],
+    "description": "Read CSV file"
+  },
+  "DataFrame Info": {
+    "prefix": "pyinfo",
+    "body": [
+      "print(f\"Shape: {df.shape}\")",
+      "print(f\"\\nColumns: {df.columns.tolist()}\")",
+      "print(f\"\\nData types:\\n{df.dtypes}\")",
+      "print(f\"\\nMissing values:\\n{df.isnull().sum()}\")",
+      "df.describe()",
+      "$0"
+    ],
+    "description": "DataFrame info summary"
+  },
+  "Pandas DataFrame": {
+    "prefix": "pypandas",
+    "body": [
+      "df = pd.DataFrame({",
+      "    '${1:column1}': [${2:values}],",
+      "    '${3:column2}': [${4:values}],",
+      "})",
+      "df",
+      "$0"
+    ],
+    "description": "Create pandas DataFrame"
+  },
+  "Matplotlib Plot": {
+    "prefix": "pyplot",
+    "body": [
+      "fig, ax = plt.subplots(figsize=(${1:10}, ${2:6}))",
+      "ax.${3|plot,scatter,bar,hist|}(${4:x}, ${5:y})",
+      "ax.set_xlabel('${6:X Label}')",
+      "ax.set_ylabel('${7:Y Label}')",
+      "ax.set_title('${8:Title}')",
+      "plt.tight_layout()",
+      "plt.show()",
+      "$0"
+    ],
+    "description": "Matplotlib plot template"
+  },
+  "Seaborn Plot": {
+    "prefix": "pysns",
+    "body": [
+      "fig, ax = plt.subplots(figsize=(${1:10}, ${2:6}))",
+      "sns.${3|scatterplot,lineplot,barplot,histplot,boxplot,heatmap|}(",
+      "    data=df,",
+      "    x='${4:x_column}',",
+      "    y='${5:y_column}',",
+      "    ax=ax",
+      ")",
+      "ax.set_title('${6:Title}')",
+      "plt.tight_layout()",
+      "plt.show()",
+      "$0"
+    ],
+    "description": "Seaborn plot template"
+  },
+  "Subplots": {
+    "prefix": "pysubplots",
+    "body": [
+      "fig, axes = plt.subplots(${1:2}, ${2:2}, figsize=(${3:12}, ${4:10}))",
+      "",
+      "axes[0, 0].${5:plot}(${6:data})",
+      "axes[0, 0].set_title('${7:Plot 1}')",
+      "",
+      "axes[0, 1].${8:plot}(${9:data})",
+      "axes[0, 1].set_title('${10:Plot 2}')",
+      "",
+      "plt.tight_layout()",
+      "plt.show()",
+      "$0"
+    ],
+    "description": "Multiple subplots template"
+  },
+  "Function with Docstring": {
+    "prefix": "pyfunc",
+    "body": [
+      "def ${1:function_name}(${2:params}):",
+      "    \"\"\"${3:Short description}.",
+      "",
+      "    Parameters",
+      "    ----------",
+      "    ${4:param} : ${5:type}",
+      "        ${6:Description}",
+      "",
+      "    Returns",
+      "    -------",
+      "    ${7:type}",
+      "        ${8:Description}",
+      "    \"\"\"",
+      "    ${0:pass}"
+    ],
+    "description": "Function with numpy docstring"
+  },
+  "Class": {
+    "prefix": "pyclass",
+    "body": [
+      "class ${1:ClassName}:",
+      "    \"\"\"${2:Class description}.\"\"\"",
+      "",
+      "    def __init__(self, ${3:params}):",
+      "        \"\"\"Initialize ${1:ClassName}.\"\"\"",
+      "        ${0:pass}"
+    ],
+    "description": "Class with docstring"
+  },
+  "Try Except": {
+    "prefix": "pytry",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as e:",
+      "    print(f\"Error: {e}\")",
+      "    ${0:raise}"
+    ],
+    "description": "Try-except block"
+  },
+  "Main Block": {
+    "prefix": "pymain",
+    "body": [
+      "if __name__ == '__main__':",
+      "    ${0:main()}"
+    ],
+    "description": "Main block"
+  },
+  "List Comprehension": {
+    "prefix": "pylistcomp",
+    "body": [
+      "[${1:expr} for ${2:item} in ${3:iterable}${4: if ${5:condition}}]$0"
+    ],
+    "description": "List comprehension"
+  },
+  "Dict Comprehension": {
+    "prefix": "pydictcomp",
+    "body": [
+      "{${1:key}: ${2:value} for ${3:item} in ${4:iterable}}$0"
+    ],
+    "description": "Dictionary comprehension"
+  },
+  "Context Manager": {
+    "prefix": "pywith",
+    "body": [
+      "with ${1:open('file.txt', 'r')} as ${2:f}:",
+      "    ${0:pass}"
+    ],
+    "description": "Context manager (with statement)"
+  },
+  "Groupby Aggregation": {
+    "prefix": "pygroupby",
+    "body": [
+      "df.groupby('${1:column}').agg({",
+      "    '${2:col}': ['${3|mean,sum,count,min,max|}'],",
+      "}).reset_index()",
+      "$0"
+    ],
+    "description": "Pandas groupby aggregation"
+  },
+  "Pivot Table": {
+    "prefix": "pypivot",
+    "body": [
+      "pd.pivot_table(",
+      "    df,",
+      "    values='${1:value_col}',",
+      "    index='${2:row_col}',",
+      "    columns='${3:col_col}',",
+      "    aggfunc='${4|mean,sum,count|}'",
+      ")",
+      "$0"
+    ],
+    "description": "Pandas pivot table"
+  },
+
+  "ggplotly Import": {
+    "prefix": "ggimport",
+    "body": [
+      "from ggplotly import *",
+      "import pandas as pd",
+      "",
+      "$0"
+    ],
+    "description": "Import ggplotly and pandas"
+  },
+  "ggplotly Scatter": {
+    "prefix": "ggscatter",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}', color='${4:group_col}'))",
+      "    + geom_point(alpha=0.7)",
+      "    + labs(",
+      "        title='${5:Title}',",
+      "        x='${6:X Label}',",
+      "        y='${7:Y Label}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly scatter plot"
+  },
+  "ggplotly Line": {
+    "prefix": "ggline",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}', color='${4:group_col}'))",
+      "    + geom_line()",
+      "    + geom_point()",
+      "    + labs(",
+      "        title='${5:Title}',",
+      "        x='${6:X Label}',",
+      "        y='${7:Y Label}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly line plot"
+  },
+  "ggplotly Bar": {
+    "prefix": "ggbar",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}', fill='${4:group_col}'))",
+      "    + geom_bar(stat='identity', position='${5|dodge,stack,fill|}')",
+      "    + labs(",
+      "        title='${6:Title}',",
+      "        x='${7:X Label}',",
+      "        y='${8:Y Label}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly bar chart"
+  },
+  "ggplotly Histogram": {
+    "prefix": "gghist",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:col}', fill='${3:group_col}'))",
+      "    + geom_histogram(bins=${4:30}, alpha=0.7)",
+      "    + labs(",
+      "        title='${5:Title}',",
+      "        x='${6:X Label}',",
+      "        y='Count'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly histogram"
+  },
+  "ggplotly Boxplot": {
+    "prefix": "ggbox",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:group_col}', y='${3:value_col}', fill='${2:group_col}'))",
+      "    + geom_boxplot()",
+      "    + labs(",
+      "        title='${4:Title}',",
+      "        x='${5:X Label}',",
+      "        y='${6:Y Label}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly boxplot"
+  },
+  "ggplotly Facet Wrap": {
+    "prefix": "ggfacet",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}'))",
+      "    + geom_${4|point,line,bar|}()",
+      "    + facet_wrap('${5:facet_col}', ncol=${6:2})",
+      "    + labs(",
+      "        title='${7:Title}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly faceted plot"
+  },
+  "ggplotly Smooth": {
+    "prefix": "ggsmooth",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}'))",
+      "    + geom_point(alpha=0.5)",
+      "    + geom_smooth(method='${4|lm,loess,lowess|}', se=${5|True,False|})",
+      "    + labs(",
+      "        title='${6:Title}',",
+      "        x='${7:X Label}',",
+      "        y='${8:Y Label}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly scatter with smoothing"
+  },
+  "ggplotly Heatmap": {
+    "prefix": "ggheatmap",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(x='${2:x_col}', y='${3:y_col}', fill='${4:value_col}'))",
+      "    + geom_tile()",
+      "    + scale_fill_viridis_c()",
+      "    + labs(",
+      "        title='${5:Title}'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly heatmap"
+  },
+  "ggplotly Candlestick": {
+    "prefix": "ggcandle",
+    "body": [
+      "(",
+      "    ggplot(${1:df}, aes(",
+      "        x='${2:date}',",
+      "        open='${3:open}',",
+      "        high='${4:high}',",
+      "        low='${5:low}',",
+      "        close='${6:close}'",
+      "    ))",
+      "    + geom_candlestick()",
+      "    + labs(",
+      "        title='${7:Title}',",
+      "        x='Date',",
+      "        y='Price'",
+      "    )",
+      "    + theme_minimal()",
+      ")",
+      "$0"
+    ],
+    "description": "ggplotly candlestick chart"
+  },
+  "ggplotly Save": {
+    "prefix": "ggsave",
+    "body": [
+      "ggsave(",
+      "    ${1:plot},",
+      "    filename='${2:plot.html}',",
+      "    width=${3:10},",
+      "    height=${4:6}",
+      ")",
+      "$0"
+    ],
+    "description": "Save ggplotly figure"
+  }
+}
